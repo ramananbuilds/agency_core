@@ -32,14 +32,10 @@ app_license = "mit"
 
 # Branding
 # --------
-# Boot
-# ----
-# Rebrand the desk app tiles: frappe -> Bizsmith, erpnext -> ERP, hrms -> HR.
-# white_label registers its own extend_bootinfo and update_website_context in its
-# own hooks.py, so only our hook belongs here.
-extend_bootinfo = [
-	"agency_core.boot.extend_bootinfo",
-]
+# App tile titles, logos and landing routes are DATA, not code: white_label's own
+# extend_bootinfo rewrites bootinfo.app_data from `App Branding Config` rows
+# (custom_title, custom_logo, custom_home_route, hide_in_apps_screen). Configure
+# them in the UI. No extend_bootinfo hook belongs here.
 
 # Includes in <head>
 # ------------------
