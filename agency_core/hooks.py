@@ -237,7 +237,9 @@ extend_bootinfo = [
 
 # Request Events
 # ----------------
-# before_request = ["agency_core.utils.before_request"]
+# white_label swaps out a whitelisted print method at request time, which drops
+# it from frappe's whitelist set. Re-register it before the method resolves.
+before_request = ["agency_core.print_fix.fix_print_whitelist"]
 # after_request = ["agency_core.utils.after_request"]
 
 # Job Events
