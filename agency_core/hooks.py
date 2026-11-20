@@ -238,6 +238,10 @@ app_license = "mit"
 before_request = ["agency_core.print_fix.fix_print_whitelist"]
 # after_request = ["agency_core.utils.after_request"]
 
+# SPA tab title. CRM ships its own index.html with the upstream <title>; white_label only
+# rewrites document.title client-side, so the tab flashes the upstream name while loading.
+after_request = ["agency_core.spa_title.fix_spa_title"]
+
 # Job Events
 # ----------
 # before_job = ["agency_core.utils.before_job"]
